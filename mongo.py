@@ -28,8 +28,15 @@ class DB_mongo():
         """
         
         df = pd.DataFrame(list(tbl.find(kwargs)))
-        
         return df
 
+    def get_unique(self, tbl, field):
+        """
+        example: mongo_stock.db.idx_price.distinct('symbol')
+        """
+        return tbl.distinct(field)
+    
+
+        
 
 print('mongo imported')
